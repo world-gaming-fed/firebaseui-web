@@ -110,12 +110,17 @@ firebaseui.auth.widget.handler.onPasswordRecoverySubmit_ =
         firebaseui.auth.widget.handler.common.getErrorMessage(error));
   };
 
+  var promise = goog.bind(app.getAuth().sendPasswordResetEmail, app.getAuth());
+  var callback = app.getConfig().getPasswordRecovery();
 
-  app.registerPending(component.executePromiseRequest(
-      /** @type {function (): !goog.Promise} */ (
-          goog.bind(app.getAuth().sendPasswordResetEmail, app.getAuth())),
+  app.registerPending(
+    component.executePromiseRequest(
+      (callback || promise),
       [email],
-      emailSentSuccessCallback, emailSentFailedCallback));
+      emailSentSuccessCallback,
+      emailSentFailedCallback
+    )
+  );
 };
 
 

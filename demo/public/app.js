@@ -22,6 +22,12 @@
 function getUiConfig() {
   return {
     'callbacks': {
+      'passwordRecovery': function(email) {
+        return Promise.resolve({
+          passwordRecovery: true,
+          email
+        });
+      },
       // Called when the user has been successfully signed in.
       'signInSuccessWithAuthResult': function(authResult, redirectUrl) {
         if (authResult.user) {
