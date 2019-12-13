@@ -973,6 +973,14 @@ firebaseui.auth.widget.Config.prototype.getSignInFailureCallback = function() {
       this.getCallbacks_()['signInFailure'] || null);
 };
 
+/**
+ * @return {?function()} The callback to invoke when
+ *     the user ask password recovery.
+ */
+firebaseui.auth.widget.Config.prototype.getPasswordRecovery = function() {
+  return /** @type {?function()} */ (
+      this.getCallbacks_()['passwordRecovery'] || null);
+};
 
 /**
  * @return {!Object} The callback configuration.
