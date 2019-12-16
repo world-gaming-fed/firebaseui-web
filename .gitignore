@@ -4,7 +4,7 @@ node_modules/
 # Generated directories.
 generated/
 out/
-dist/
+# dist/
 
 # Generated files.
 *.log
@@ -13,6 +13,25 @@ dist/
 *~
 *.swp
 
-#Local config.
+# Local config.
 **/.firebaserc
 demo/public/config.js
+demo/public/dist
+
+# Dist release
+.opensource
+buildtools/
+demo/
+externs/
+image/
+javascript/
+soy/
+stylesheet/
+translations/
+types/
+.travis.yml
+bower.json
+gulpfile.js
+protractor_spec.js
+protractor.conf.js
+sauce_browsers.json
